@@ -17,10 +17,14 @@
   background-repeat: no-repeat;
 }
 #navbar-brand {
-    padding: 5px 5px;
+  padding: 5px 5px;
 }
 #save-the-date {
-    width: 100%;
+  width: 100%;
+}
+#contact-envelope {
+  top: 2px;
+  left: 4px;
 }
 /*!
  * Bootstrap v3.1.1 (http://getbootstrap.com)
