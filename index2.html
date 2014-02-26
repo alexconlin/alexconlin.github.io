@@ -32,6 +32,14 @@
     });
     </script>
     <!-- /Modal -->
+    <!-- weddingemail google apps script validation -->
+    <script type="text/javascript">
+      function checkBeforeSubmit(){
+          document.getElementById('theForm').submit();
+          document.getElementById('success').innerHTML='Submitted';
+      }
+    </script>
+    <!-- /weddingemail google apps script validation -->
 </head>
 <body id="front-page-body">
 
@@ -82,16 +90,35 @@
 <!-- /Script links -->
 
 </body>
-<div class="modal hide fade" id="myModal">
-  <div class="modal-header">
-    <a class="close" data-dismiss="modal">×</a>
-    <h3>Modal header</h3>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Please sign up for email updates!</h4>
+      </div>
+      <div class="modal-body">
+
+        Hello and thanks for visiting our website! We hope you're looking forward to our wedding as much as we are! Please enter your name and email address below so that we can update you by email when we finalise the plans for stuff like parking closer to the date. <p>
+
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+        <form method="post" action="https://script.google.com/macros/s/AKfycbzMXogHqQlTbCA0o0dA7h1OTT9SUAtzHfSkQC1bm7XIfzThvYzr/exec" name="theForm" id="theForm" target="hidden_iframe" id="GoogleForm">
+        <div class="input-group">
+          <span class="input-group-addon">Name</span>
+          <input type="text" name="name" id="name" class="form-control" placeholder="e.g. Alex Guest">
+        </div> <p>
+        <div class="input-group">
+          <span class="input-group-addon">Email address</span>
+          <input type="email" name="email" id="email" class="form-control" placeholder="e.g. guest@example.com">
+        </div> <p><p>
+        <button type="button" value="Submit" class="btn btn-primary" onclick="checkBeforeSubmit();">Submit</button>
+        <span id="success"></span>
+        </div>
+        </form>
+      </div>
+    </div>
   </div>
-  <div class="modal-body">
-    <p>One fine body…</p>
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="btn">Close</a>
-    <a href="#" class="btn btn-primary">Save changes</a>
-  </div>
+</div>
+<!-- /Modal -->
 </html>
