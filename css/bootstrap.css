@@ -2,19 +2,22 @@
  * Alex Conlin-Oakley: bootstrap customisations
  */
 #front-page-heading h1 {
-   color:white;
+   color: #F8F8F8;
 }
 #front-page-body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background-color: #E7E7E7;
   margin: 0;
   background: url('../images/mathematical-bridge.jpg');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
+}
+#other-page-body {
+  background-color: #fff;
 }
 #navbar-brand {
   padding: 5px 5px;
@@ -25,6 +28,9 @@
 #contact-envelope {
   top: 2px;
   left: 4px;
+}
+#container-background container {
+  color: #F8F8F8;
 }
 /*!
  * Bootstrap v3.1.1 (http://getbootstrap.com)

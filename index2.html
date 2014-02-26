@@ -22,6 +22,16 @@
          ga('send', 'pageview');
     </script>
     <!-- /Google Analytics -->
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- /jQuery -->
+    <!-- Modal -->
+    <script type="text/javascript">
+    $(window).load(function(){
+        $('#myModal').modal('show');
+    });
+    </script>
+    <!-- /Modal -->
 </head>
 <body id="front-page-body">
 
@@ -44,9 +54,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li> <!-- TODO: Change link to ../ in production -->
-        <li><a href="savethedate.html">Save the date</a></li> <!-- TODO: Change link -->
-        <li><a href="#">Invitation</a></li> <!-- TODO: Change link to -->
-        <li><a href="#">Contact</a></li> <!-- TODO: Change link -->
+        <li><a href="savethedate.html">Save the date</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="mailto:thealexeswedding@gmail.com">Contact<span id="contact-envelope" class="glyphicon glyphicon-envelope"></span></a>
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -57,11 +70,28 @@
 
 </div> <!-- /container -->
 
+</div>
+
+<div class="container">
+<a class="btn" data-toggle="modal" href="#myModal" >Launch Modal</a>
+</div>
 
 <!-- Script links -->
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
 <script src="js/bootstrap.js"></script>
 <!-- /Script links -->
 
 </body>
+<div class="modal hide fade" id="myModal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+    <a href="#" class="btn btn-primary">Save changes</a>
+  </div>
 </html>
