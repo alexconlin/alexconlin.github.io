@@ -2,7 +2,8 @@
  * Alex Conlin-Oakley: bootstrap customisations
  */
 #front-page-heading h1 {
-   color: #F8F8F8;
+   color: #F4F4F4;
+   text-shadow: 1px 1px #000000;
 }
 #front-page-body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -24,6 +25,7 @@
 }
 #save-the-date {
   width: 100%;
+  max-width: 700px;
 }
 #contact-envelope {
   top: 2px;

@@ -25,6 +25,9 @@
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <!-- /jQuery -->
+    <!-- jQuery Cookie -->
+    <script src="js/jquery.cookie.js"></script>
+    <!-- /jQuery Cookie -->
     <!-- Modal -->
     <script type="text/javascript">
     $(window).load(function(){
@@ -34,9 +37,10 @@
     <!-- /Modal -->
     <!-- weddingemail google apps script validation -->
     <script type="text/javascript">
-      function checkBeforeSubmit(){
+      function submitForm(){
           document.getElementById('theForm').submit();
-          document.getElementById('success').innerHTML='Submitted';
+          $.cookie('visited', 'y', { expires: 365, path: '/' });
+          document.getElementById('successful-submission').innerHTML="Submitted";
       }
     </script>
     <!-- /weddingemail google apps script validation -->
@@ -108,8 +112,8 @@
           <span class="input-group-addon">Email address</span>
           <input type="email" name="email" id="email" class="form-control" placeholder="e.g. guest@example.com">
         </div> <p><p>
-        <button type="button" value="Submit" class="btn btn-primary" onclick="checkBeforeSubmit();">Submit</button>
-        <span id="success"></span>
+        <button type="button" value="Submit" class="btn btn-primary" onclick="submitForm();">Submit</button>
+        <div id="successful-submission"></div>
         </div>
         </form>
       </div>
