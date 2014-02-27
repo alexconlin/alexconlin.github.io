@@ -39,6 +39,9 @@
     <script type="text/javascript">
       function submitForm(){
           document.getElementById('theForm').submit();
+          $.cookie('the_cookie', 'the_value');
+          var myCookie = $.cookie('the_cookie');
+          alert(myCookie);
           $.cookie('visited', 'y', { expires: 365, path: '/' });
           document.getElementById('successful-submission').innerHTML="Submitted";
       }
