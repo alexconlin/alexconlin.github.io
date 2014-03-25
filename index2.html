@@ -22,12 +22,9 @@
          ga('send', 'pageview');
     </script>
     <!-- /Google Analytics -->
-    <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <!-- /jQuery -->
-    <!-- jQuery Cookie -->
     <script src="js/jquery.cookie.js"></script>
-    <!-- /jQuery Cookie -->
+    <script src="js/jquery.validate.js"></script>
     <!-- Modal -->
     <script type="text/javascript">
     $(window).load(function(){
@@ -39,9 +36,6 @@
     <script type="text/javascript">
       function submitForm(){
           document.getElementById('theForm').submit();
-          $.cookie('the_cookie', 'the_value');
-          var myCookie = $.cookie('the_cookie');
-          alert(myCookie);
           $.cookie('visited', 'y', { expires: 365, path: '/' });
           document.getElementById('successful-submission').innerHTML="Submitted";
       }
@@ -82,13 +76,13 @@
 
 <!-- <h1>The Alexes&rsquo; Wedding</h1> -->
 <h1>28<sup>th</sup> June 2014</h1>
-
+<h1 id="test-uuid"></h1>
 </div> <!-- /container -->
 
 </div>
 
 <!-- Script links -->
-
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc9.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <!-- /Script links -->
 
@@ -109,16 +103,31 @@
         <form method="post" action="https://script.google.com/macros/s/AKfycbzMXogHqQlTbCA0o0dA7h1OTT9SUAtzHfSkQC1bm7XIfzThvYzr/exec" name="theForm" id="theForm" target="hidden_iframe" id="GoogleForm">
         <div class="input-group">
           <span class="input-group-addon">Name</span>
-          <input type="text" name="name" id="name" class="form-control" placeholder="e.g. Alex Guest">
+          <input type="text" name="name" id="name" class="form-control" placeholder="e.g. Alex Guest" required>
         </div> <p>
         <div class="input-group">
           <span class="input-group-addon">Email address</span>
-          <input type="email" name="email" id="email" class="form-control" placeholder="e.g. guest@example.com">
+          <input type="email" name="email" id="email" class="form-control" placeholder="e.g. guest@example.com" required>
         </div> <p><p>
         <button type="button" value="Submit" class="btn btn-primary" onclick="submitForm();">Submit</button>
         <div id="successful-submission"></div>
         </div>
         </form>
+        <!-- form validation -->
+        <script>
+        $("#theForm").validate({
+          rules: {
+            // simple rule, converted to {required:true}
+            name: "required",
+            // compound rule
+            email: {
+              required: true,
+              email: true
+            }
+          }
+        });
+        </script>
+        <!-- /form validation -->
       </div>
     </div>
   </div>
