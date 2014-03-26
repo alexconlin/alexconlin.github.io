@@ -40,50 +40,6 @@
 		    });
 			</script>
 			<!-- /Email sign-up modal display -->
-			<!-- Fix jQuery validation - override jquery validate plugin defaults -->
-			<script>
-			$.validator.setDefaults({
-			    highlight: function(element) {
-			        $(element).closest('.form-group').addClass('has-error');
-			    },
-			    unhighlight: function(element) {
-			        $(element).closest('.form-group').removeClass('has-error');
-			    },
-			    errorElement: 'span',
-			    errorClass: 'help-block',
-			    errorPlacement: function(error, element) {
-			        if(element.parent('.input-group').length) {
-			            error.insertAfter(element.parent());
-			        } else {
-			            error.insertAfter(element);
-			        }
-			    }
-			});
-			</script>
-			<!-- /Fix jQuery validation -->
-			<!-- Form validation -->
-			<script>
-			$("#theForm").validate({
-			  rules: {
-			    // simple rule, converted to {required:true}
-			    name: "required",
-			    // compound rule
-			    email: {
-			      required: true,
-			      email: true
-			    }
-			  },
-				highlight: function(element) {
-					$(element).closest('.input-group').removeClass('has-success').addClass('has-error');
-				},
-				success: function(element) {
-					element
-					.text('OK!').addClass('valid')
-					.closest('.input-group').removeClass('has-error').addClass('has-success');
-				}
-			});
-			</script>
-			<!-- /Form validation -->
 	    <!-- weddingemail google apps script validation -->
 	    <script type="text/javascript">
 	      function submitForm(){
@@ -170,6 +126,29 @@
 			        	<div id="successful-submission"></div>
 			        </div>
 		        </form>
+						<!-- Form validation -->
+						<script>
+						$("#theForm").validate({
+						  rules: {
+						    // simple rule, converted to {required:true}
+						    name: "required",
+						    // compound rule
+						    email: {
+						      required: true,
+						      email: true
+						    }
+						  },
+							highlight: function(element) {
+								$(element).closest('.input-group').removeClass('has-success').addClass('has-error');
+							},
+							success: function(element) {
+								element
+								.text('OK!').addClass('valid')
+								.closest('.input-group').removeClass('has-error').addClass('has-success');
+							}
+						});
+						</script>
+						<!-- /Form validation -->
 		      </div><!-- /modal-body -->
 		    </div><!-- /modal-content -->
 		  </div><!-- /modal-dialog -->
