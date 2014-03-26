@@ -142,8 +142,8 @@
 								$(element).closest('.input-group').removeClass('has-success').addClass('has-error');
 							},
 							success: function(element) {
-								element
-								.text('OK!').addClass('valid')
+								$(element)
+								.text('OK!')
 								.closest('.input-group').removeClass('has-error').addClass('has-success');
 							}
 						});
