@@ -144,7 +144,7 @@
 							success: function(element) {
 								$(element).closest('.input-group').removeClass('has-error').addClass('has-success');
 							},
-							errorElement: '.input-group',
+							errorElement: 'input-group',
 					    errorClass: 'help-block',
 					    errorPlacement: function(error, element) {
 					        if(element.parent('input-group').length) {
