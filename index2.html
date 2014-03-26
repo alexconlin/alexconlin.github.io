@@ -30,7 +30,7 @@
 		    $(window).load(function() {
 		        if($.cookie('visited') != null && $.cookie('visited') != "")
 		        {
-		            $("div#myModal.modal, .modal-backdrop").hide();
+		            $("div#myModal.modal").hide();
 		        }
 		        else
 		        {
@@ -61,6 +61,29 @@
 			});
 			</script>
 			<!-- /Fix jQuery validation -->
+			<!-- Form validation -->
+			<script>
+			$("#theForm").validate({
+			  rules: {
+			    // simple rule, converted to {required:true}
+			    name: "required",
+			    // compound rule
+			    email: {
+			      required: true,
+			      email: true
+			    }
+			  },
+				highlight: function(element) {
+					$(element).closest('.input-group').removeClass('has-success').addClass('has-error');
+				},
+				success: function(element) {
+					element
+					.text('OK!').addClass('valid')
+					.closest('.input-group').removeClass('has-error').addClass('has-success');
+				}
+			});
+			</script>
+			<!-- /Form validation -->
 	    <!-- weddingemail google apps script validation -->
 	    <script type="text/javascript">
 	      function submitForm(){
