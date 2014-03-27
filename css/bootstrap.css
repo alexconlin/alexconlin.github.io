@@ -39,9 +39,16 @@ label.error {
 }
 #other-page-body {
   background-color: #fff;
+  background: url('../images/aanda_spot_background_2.png');
+  background-size: 600px 600px;
 }
 #navbar-brand {
   padding: 5px 5px;
+}
+.plain-hero {
+  background-color: #FFFFFF;
+  padding: 10px 20px;
+  padding-bottom: 200px;
 }
 .navbar-brand,
 .navbar-nav li a {
@@ -53,6 +60,23 @@ label.error {
 #save-the-date {
   width: 100%;
   max-width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.invitation {
+  width: auto;
+  max-width: 448px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+.homepage-date {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 115px;
 }
 .input-group {
   margin-bottom: 15px;

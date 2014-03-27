@@ -28,14 +28,14 @@
 	    <!-- Email sign-up modal display -->
 	    <script type="text/javascript">
 		    $(window).load(function() {
-		        if($.cookie('visited') != null && $.cookie('visited') != "")
+		        if($.cookie('emailsubmitted') != null && $.cookie('emailsubmitted') != "")
 		        {
 		            $("div#myModal.modal").hide();
 		        }
 		        else
 		        {
 		            $('#myModal').modal('show');
-		            $.cookie('visited', 'yes');
+		            $.cookie('emailsubmitted', 'yes');
 		        }
 		    });
 			</script>
@@ -44,9 +44,9 @@
 	    <script type="text/javascript">
 	      function submitForm(){
 	          document.getElementById('theForm').submit();
-	          $.cookie('visited', 'y', { expires: 365, path: '/' });
+	          $.cookie('emailsubmitted', 'yes', { expires: 365, path: '/' });
 	          document.getElementById('successful-submission').innerHTML="Submitted";
-	      }
+	      };
 	    </script>
 	    <!-- /weddingemail google apps script validation -->
 	</head>
@@ -73,6 +73,8 @@
 			        <li class="active"><a href="#">Home</a></li> <!-- TODO: Change link to ../ in production -->
 			        <li><a href="savethedate.html">Save the date</a></li>
 			        <li><a href="invitation.html">Invitation</a></li>
+			        <li><a href="programme.html">Programme</a></li>
+			        <li><a href="weddinglist.html">Wedding List</a></li>
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
 			        <li>
@@ -81,16 +83,13 @@
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
-			</nav>
+			</nav><!-- /.navbar -->
 
-			<!-- <h1>The Alexes&rsquo; Wedding</h1> -->
-			<h1>28<sup>th</sup> June 2014</h1>
-			<h1 id="test-uuid"></h1>
+			<img src="images/homepage_date.png" class="homepage-date">
 		</div> <!-- /container -->
 
 		<!-- Script links -->
 		<script src="js/bootstrap.js"></script>
-		<script src="form.validation.js"></script>
 		<!-- /Script links -->
 
 		<!-- Modal -->
