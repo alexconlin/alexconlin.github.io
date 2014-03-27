@@ -114,12 +114,14 @@
 			          <div class="controls">
 			          	<input type="text" name="name" id="name" class="form-control" placeholder="e.g. Alex Guest">
 			          </div>
+			          <span class="help-block"></span>
 			        </div>
 			        <div class="input-group">
 			          <label class="input-group-addon" for="email">Email address</label>
 			          <div class="controls">
 			          	<input type="email" name="email" id="email" class="form-control" placeholder="e.g. guest@example.com">
 			          </div>
+			          <span class="help-block"></span>
 			        </div>
 			        <div class="button-group">
 			        	<button type="button" value="Submit" class="btn btn-primary" onclick="submitForm();">Submit</button>
@@ -147,8 +149,8 @@
 							errorElement: 'input-group',
 					    errorClass: 'help-block',
 					    errorPlacement: function(error, element) {
-					        if(element.attr('email')) {
-					            error.insertAfter(element.parent().parent());
+					        if(element.parent('.input-group').length) {
+					            error.insertAfter(element.parent());
 					        } else {
 					            error.insertAfter(element);
 					        }
