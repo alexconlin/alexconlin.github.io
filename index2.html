@@ -147,7 +147,11 @@
 							errorElement: 'input-group',
 					    errorClass: 'help-block',
 					    errorPlacement: function(error, element) {
-					      error.insertAfter(element.parent().parent());
+					        if($(element).attr('email')) {
+					            error.insertAfter(element.parent().parent());
+					        } else {
+					            error.insertAfter(element);
+					        }
 					    }
 						});
 						</script>
