@@ -2,13 +2,13 @@
 <html>
 	<head>
 	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <title>The Alexes’ Wedding</title>
 	    <meta name="description" content="The Wedding of Alex Jones and Alex Conlin-Oakley on 28th June 2014 at Queens' College, Cambridge">
 	    <meta name="keywords" content="Alex, Jones, Conlin-Oakley, wedding, marriage, cambridge, June, 2014, 28, 28th, Queens, Queens', Queens College">
 	    <meta name="author" content="Alex Conlin-Oakley and Alex Jones">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    
-	    <title>The Alexes’ Wedding</title>
 	    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 	    
 	    <!-- Google Analytics -->
@@ -22,9 +22,12 @@
 	         ga('send', 'pageview');
 	    </script>
 	    <!-- /Google Analytics -->
-	    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
 	    <script src="js/jquery.cookie.js"></script>
 	    <script src="js/jquery.validate.js"></script>
+
 	    <!-- Email sign-up modal display -->
 	    <script type="text/javascript">
 		    $(window).load(function() {
@@ -38,8 +41,8 @@
 		            $.cookie('emailsubmitted', 'yes');
 		        }
 		    });
-			</script>
-			<!-- /Email sign-up modal display -->
+		</script>
+		<!-- /Email sign-up modal display -->
 	    <!-- weddingemail google apps script validation -->
 	    <script type="text/javascript">
 	      function submitForm(){
